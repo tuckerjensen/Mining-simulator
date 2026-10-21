@@ -1,0 +1,922 @@
+{
+  "mixed": {
+    "tons": 49100,
+    "loads": 445,
+    "tph": 2045.8333333333333,
+    "cost": 63120,
+    "cpt": 1.285539714867617,
+    "sources": [
+      {
+        "id": "ORE",
+        "material": "ore",
+        "loadMean": 4.5,
+        "loadCV": 0.15,
+        "availability": 0.95,
+        "free": 1435.4333250545124,
+        "busy": 1260.081146985564,
+        "wait": 1390.4207237563744,
+        "tons": 28800,
+        "loads": 260,
+        "reserved": 460,
+        "inventory": 999999970650
+      },
+      {
+        "id": "WASTE",
+        "material": "waste",
+        "loadMean": 3.6,
+        "loadCV": 0.15,
+        "availability": 0.95,
+        "free": 1433.6094742655873,
+        "busy": 714.9869422429715,
+        "wait": 203.69476974064793,
+        "tons": 20300,
+        "loads": 185,
+        "reserved": 0,
+        "inventory": 999999979380
+      }
+    ],
+    "destinations": [
+      {
+        "id": "CRUSHER",
+        "positions": 1,
+        "dumpMean": 3,
+        "dumpCV": 0.2,
+        "capTPH": 900,
+        "materials": [
+          "ore"
+        ],
+        "slots": [
+          1454.3411833605692
+        ],
+        "rateFree": 1460.5712115450924,
+        "busy": 424.0504870969061,
+        "wait": 1351.2743688260668,
+        "tons": 15270,
+        "loads": 138
+      },
+      {
+        "id": "STOCKPILE",
+        "positions": 2,
+        "dumpMean": 2.3,
+        "dumpCV": 0.15,
+        "capTPH": 1800,
+        "materials": [
+          "ore",
+          "waste"
+        ],
+        "slots": [
+          1437.2526262515887,
+          1443.0770357602885
+        ],
+        "rateFree": 1443.045936913202,
+        "busy": 709.3673460279135,
+        "wait": 1017.7439122873452,
+        "tons": 33830,
+        "loads": 307
+      }
+    ],
+    "trucks": [
+      {
+        "id": "90t",
+        "count": 7,
+        "payload": 90,
+        "speedFactor": 1,
+        "availability": 0.95,
+        "costPerHour": 190,
+        "fixedSource": "ORE",
+        "fixedDestination": "CRUSHER",
+        "loads": 264,
+        "tons": 23760,
+        "loadWait": 844.366063871707,
+        "dumpWait": 1530.3259555478237,
+        "travel": 5441,
+        "service": 1840.5478151348427,
+        "delay": 447.00309172606234
+      },
+      {
+        "id": "140t",
+        "count": 5,
+        "payload": 140,
+        "speedFactor": 0.93,
+        "availability": 0.93,
+        "costPerHour": 260,
+        "fixedSource": "WASTE",
+        "fixedDestination": "STOCKPILE",
+        "loads": 181,
+        "tons": 25340,
+        "loadWait": 749.7494296253149,
+        "dumpWait": 838.6923255655881,
+        "travel": 3997.8494623655915,
+        "service": 1279.8098730485483,
+        "delay": 388.6605516888942
+      }
+    ],
+    "flows": [
+      {
+        "source": "ORE",
+        "destination": "STOCKPILE",
+        "material": "ore",
+        "tons": 13530,
+        "loads": 122
+      },
+      {
+        "source": "WASTE",
+        "destination": "STOCKPILE",
+        "material": "waste",
+        "tons": 20300,
+        "loads": 185
+      },
+      {
+        "source": "ORE",
+        "destination": "CRUSHER",
+        "material": "ore",
+        "tons": 15270,
+        "loads": 138
+      }
+    ],
+    "count": 12,
+    "hours": 24,
+    "shiftsOut": [
+      24330,
+      24770
+    ],
+    "constraints": [
+      {
+        "source": "ORE",
+        "destination": "CRUSHER",
+        "targetShare": 0.7,
+        "minTPH": 350,
+        "actual": 15270,
+        "minimum": 8400,
+        "shortfall": 0,
+        "excess": 0
+      },
+      {
+        "source": "ORE",
+        "destination": "STOCKPILE",
+        "targetShare": 0.3,
+        "minTPH": 0,
+        "actual": 13530,
+        "minimum": 0,
+        "shortfall": 0,
+        "excess": 0
+      },
+      {
+        "source": "WASTE",
+        "destination": "STOCKPILE",
+        "targetShare": 1,
+        "minTPH": 0,
+        "actual": 20300,
+        "minimum": 0,
+        "shortfall": 0,
+        "excess": 0
+      }
+    ],
+    "loadedTons": 49970,
+    "inTransit": 870,
+    "reservedTons": 460,
+    "dead": 0
+  },
+  "single": {
+    "tons": 33500,
+    "loads": 335,
+    "tph": 1395.8333333333333,
+    "cost": 38400,
+    "cpt": 1.146268656716418,
+    "sources": [
+      {
+        "id": "EX1",
+        "material": "waste",
+        "loadMean": 4,
+        "loadCV": 0.15,
+        "availability": 0.95,
+        "free": 1451.2154741422655,
+        "busy": 1436.4575108454933,
+        "wait": 2051.8949457896506,
+        "tons": 33500,
+        "loads": 335,
+        "reserved": 500,
+        "inventory": 999999966200
+      }
+    ],
+    "destinations": [
+      {
+        "id": "DUMP",
+        "positions": 1,
+        "dumpMean": 3,
+        "dumpCV": 0.2,
+        "capTPH": 2000,
+        "materials": [
+          "waste"
+        ],
+        "slots": [
+          1442.0905582380024
+        ],
+        "rateFree": 1441.8040511141892,
+        "busy": 999.9318186883761,
+        "wait": 12.64592919906097,
+        "tons": 33500,
+        "loads": 335
+      }
+    ],
+    "trucks": [
+      {
+        "id": "100t",
+        "count": 8,
+        "payload": 100,
+        "speedFactor": 1,
+        "availability": 0.96,
+        "costPerHour": 200,
+        "fixedSource": "EX1",
+        "fixedDestination": "DUMP",
+        "loads": 335,
+        "tons": 33500,
+        "loadWait": 2051.8949457896506,
+        "dumpWait": 12.64592919906097,
+        "travel": 6733,
+        "service": 2449.695361914134,
+        "delay": 316.77919977669376
+      }
+    ],
+    "flows": [
+      {
+        "source": "EX1",
+        "destination": "DUMP",
+        "material": "waste",
+        "tons": 33500,
+        "loads": 335
+      }
+    ],
+    "count": 8,
+    "hours": 24,
+    "shiftsOut": [
+      16700,
+      16800
+    ],
+    "constraints": [
+      {
+        "source": "EX1",
+        "destination": "DUMP",
+        "targetShare": 1,
+        "minTPH": 0,
+        "actual": 33500,
+        "minimum": 0,
+        "shortfall": 0,
+        "excess": 0
+      }
+    ],
+    "loadedTons": 33800,
+    "inTransit": 300,
+    "reservedTons": 500,
+    "dead": 0
+  },
+  "split": {
+    "tons": 52850,
+    "loads": 470,
+    "tph": 2202.0833333333335,
+    "cost": 66240,
+    "cpt": 1.2533585619678336,
+    "sources": [
+      {
+        "id": "EX1",
+        "material": "ore",
+        "loadMean": 3.8,
+        "loadCV": 0.2,
+        "availability": 0.95,
+        "free": 1441.7742548993276,
+        "busy": 1311.3929385867048,
+        "wait": 1367.0504340399061,
+        "tons": 36110,
+        "loads": 319,
+        "reserved": 410,
+        "inventory": 999999963010
+      },
+      {
+        "id": "EX2",
+        "material": "ore",
+        "loadMean": 5,
+        "loadCV": 0.17,
+        "availability": 0.95,
+        "free": 1446.4773989931557,
+        "busy": 809.9121011688447,
+        "wait": 514.7808302541232,
+        "tons": 16740,
+        "loads": 151,
+        "reserved": 180,
+        "inventory": 999999983260
+      }
+    ],
+    "destinations": [
+      {
+        "id": "CRUSHER",
+        "positions": 1,
+        "dumpMean": 2.8,
+        "dumpCV": 0.2,
+        "capTPH": 900,
+        "materials": [
+          "ore"
+        ],
+        "slots": [
+          1441.3743902169135
+        ],
+        "rateFree": 1447.454993096856,
+        "busy": 450.81661674089736,
+        "wait": 3433.006140151031,
+        "tons": 17740,
+        "loads": 161
+      },
+      {
+        "id": "ROM",
+        "positions": 2,
+        "dumpMean": 2,
+        "dumpCV": 0.2,
+        "capTPH": 1800,
+        "materials": [
+          "ore"
+        ],
+        "slots": [
+          1446.3452586891751,
+          1449.6366553998464
+        ],
+        "rateFree": 1452.7057491198213,
+        "busy": 626.5053491814358,
+        "wait": 1556.4143853246549,
+        "tons": 35110,
+        "loads": 309
+      }
+    ],
+    "trucks": [
+      {
+        "id": "90t",
+        "count": 7,
+        "payload": 90,
+        "speedFactor": 1,
+        "availability": 0.95,
+        "costPerHour": 180,
+        "fixedSource": "EX1",
+        "fixedDestination": "CRUSHER",
+        "loads": 259,
+        "tons": 23310,
+        "loadWait": 932.22302979116,
+        "dumpWait": 2749.5419573157915,
+        "travel": 4282,
+        "service": 1773.0236372077006,
+        "delay": 366.9331931759636
+      },
+      {
+        "id": "140t",
+        "count": 6,
+        "payload": 140,
+        "speedFactor": 0.92,
+        "availability": 0.94,
+        "costPerHour": 250,
+        "fixedSource": "EX2",
+        "fixedDestination": "ROM",
+        "loads": 211,
+        "tons": 29540,
+        "loadWait": 949.6082345028688,
+        "dumpWait": 2239.878568159893,
+        "travel": 3698.9130434782705,
+        "service": 1440.373243015006,
+        "delay": 338.43560619382475
+      }
+    ],
+    "flows": [
+      {
+        "source": "EX1",
+        "destination": "ROM",
+        "material": "ore",
+        "tons": 24240,
+        "loads": 216
+      },
+      {
+        "source": "EX2",
+        "destination": "ROM",
+        "material": "ore",
+        "tons": 10870,
+        "loads": 93
+      },
+      {
+        "source": "EX2",
+        "destination": "CRUSHER",
+        "material": "ore",
+        "tons": 5870,
+        "loads": 58
+      },
+      {
+        "source": "EX1",
+        "destination": "CRUSHER",
+        "material": "ore",
+        "tons": 11870,
+        "loads": 103
+      }
+    ],
+    "count": 13,
+    "hours": 24,
+    "shiftsOut": [
+      26080,
+      26770
+    ],
+    "constraints": [
+      {
+        "source": "EX1",
+        "destination": "CRUSHER",
+        "targetShare": 0.6,
+        "minTPH": 200,
+        "actual": 11870,
+        "minimum": 4800,
+        "shortfall": 0,
+        "excess": 0
+      },
+      {
+        "source": "EX1",
+        "destination": "ROM",
+        "targetShare": 0.4,
+        "minTPH": 0,
+        "actual": 24240,
+        "minimum": 0,
+        "shortfall": 0,
+        "excess": 0
+      },
+      {
+        "source": "EX2",
+        "destination": "CRUSHER",
+        "targetShare": 0.5,
+        "minTPH": 250,
+        "actual": 5870,
+        "minimum": 6000,
+        "shortfall": 130,
+        "excess": 0
+      },
+      {
+        "source": "EX2",
+        "destination": "ROM",
+        "targetShare": 0.5,
+        "minTPH": 0,
+        "actual": 10870,
+        "minimum": 0,
+        "shortfall": 0,
+        "excess": 0
+      }
+    ],
+    "loadedTons": 53730,
+    "inTransit": 880,
+    "reservedTons": 590,
+    "dead": 0
+  },
+  "many": {
+    "tons": 62680,
+    "loads": 562,
+    "tph": 2611.6666666666665,
+    "cost": 138720,
+    "cpt": 2.213146139119336,
+    "sources": [
+      {
+        "id": "ORE",
+        "material": "ore",
+        "loadMean": 4.5,
+        "loadCV": 0.15,
+        "availability": 0.95,
+        "inventory": 20970,
+        "free": 1464.4353307772583,
+        "busy": 1263.039536106507,
+        "wait": 3338.070322174238,
+        "tons": 28210,
+        "loads": 254,
+        "reserved": 600
+      },
+      {
+        "id": "WASTE",
+        "material": "waste",
+        "loadMean": 3.6,
+        "loadCV": 0.15,
+        "availability": 0.95,
+        "inventory": 36320,
+        "free": 1443.1495811245152,
+        "busy": 479.89396621689616,
+        "wait": 138.3915557256181,
+        "tons": 12800,
+        "loads": 115,
+        "reserved": 370
+      },
+      {
+        "id": "ORE2",
+        "material": "ore",
+        "loadMean": 4.2,
+        "loadCV": 0.16,
+        "inventory": 70,
+        "availability": 0.96,
+        "free": 1212.3165272800477,
+        "busy": 771.8896093722211,
+        "wait": 511.64396416587437,
+        "tons": 19930,
+        "loads": 177,
+        "reserved": 0
+      },
+      {
+        "id": "WASTE2",
+        "material": "waste",
+        "loadMean": 4,
+        "loadCV": 0.18,
+        "inventory": 28260,
+        "availability": 0.94,
+        "free": 1383.796013559282,
+        "busy": 66.75502631064752,
+        "wait": 18.59355145201721,
+        "tons": 1740,
+        "loads": 16,
+        "reserved": 270
+      }
+    ],
+    "destinations": [
+      {
+        "id": "CRUSHER",
+        "positions": 1,
+        "dumpMean": 3,
+        "dumpCV": 0.2,
+        "capTPH": 900,
+        "materials": [
+          "ore"
+        ],
+        "slots": [
+          1455.440871754786
+        ],
+        "rateFree": 1459.1996078838188,
+        "busy": 561.4187790198415,
+        "wait": 7146.408867221461,
+        "tons": 20170,
+        "loads": 183
+      },
+      {
+        "id": "STOCKPILE",
+        "positions": 2,
+        "dumpMean": 2.3,
+        "dumpCV": 0.15,
+        "capTPH": 1800,
+        "materials": [
+          "ore",
+          "waste"
+        ],
+        "slots": [
+          1460.389931254777,
+          1455.720742722113
+        ],
+        "rateFree": 1461.3253598913527,
+        "busy": 865.8593410212089,
+        "wait": 9393.399732858099,
+        "tons": 42510,
+        "loads": 379
+      }
+    ],
+    "trucks": [
+      {
+        "id": "90t",
+        "count": 14,
+        "payload": 90,
+        "speedFactor": 1,
+        "availability": 0.95,
+        "costPerHour": 190,
+        "fixedSource": "ORE",
+        "fixedDestination": "CRUSHER",
+        "loads": 320,
+        "tons": 28800,
+        "loadWait": 1871.6958229097663,
+        "dumpWait": 9089.038397006849,
+        "travel": 6715,
+        "service": 2302.2575296839836,
+        "delay": 326.9637630752189
+      },
+      {
+        "id": "140t",
+        "count": 12,
+        "payload": 140,
+        "speedFactor": 0.93,
+        "availability": 0.93,
+        "costPerHour": 260,
+        "fixedSource": "WASTE",
+        "fixedDestination": "STOCKPILE",
+        "loads": 242,
+        "tons": 33880,
+        "loadWait": 2135.00357060798,
+        "dumpWait": 7450.770203072714,
+        "travel": 5419.354838709703,
+        "service": 1750.8547971727712,
+        "delay": 641.4219680806814
+      }
+    ],
+    "flows": [
+      {
+        "source": "ORE",
+        "destination": "STOCKPILE",
+        "material": "ore",
+        "tons": 15610,
+        "loads": 139
+      },
+      {
+        "source": "WASTE",
+        "destination": "STOCKPILE",
+        "material": "waste",
+        "tons": 12800,
+        "loads": 115
+      },
+      {
+        "source": "ORE2",
+        "destination": "STOCKPILE",
+        "material": "ore",
+        "tons": 12360,
+        "loads": 109
+      },
+      {
+        "source": "ORE2",
+        "destination": "CRUSHER",
+        "material": "ore",
+        "tons": 7570,
+        "loads": 68
+      },
+      {
+        "source": "WASTE2",
+        "destination": "STOCKPILE",
+        "material": "waste",
+        "tons": 1740,
+        "loads": 16
+      },
+      {
+        "source": "ORE",
+        "destination": "CRUSHER",
+        "material": "ore",
+        "tons": 12600,
+        "loads": 115
+      }
+    ],
+    "count": 26,
+    "hours": 24,
+    "shiftsOut": [
+      30370,
+      32310
+    ],
+    "constraints": [
+      {
+        "source": "ORE",
+        "destination": "CRUSHER",
+        "targetShare": 0.7,
+        "minTPH": 350,
+        "actual": 12600,
+        "minimum": 8400,
+        "shortfall": 0,
+        "excess": 0
+      },
+      {
+        "source": "ORE",
+        "destination": "STOCKPILE",
+        "targetShare": 0.3,
+        "minTPH": 0,
+        "actual": 15610,
+        "minimum": 0,
+        "shortfall": 0,
+        "excess": 0
+      },
+      {
+        "source": "WASTE",
+        "destination": "STOCKPILE",
+        "targetShare": 1,
+        "minTPH": 0,
+        "actual": 12800,
+        "minimum": 0,
+        "shortfall": 0,
+        "excess": 0
+      }
+    ],
+    "loadedTons": 64380,
+    "inTransit": 1700,
+    "reservedTons": 1240,
+    "dead": 0
+  },
+  "shifts": {
+    "tons": 93190,
+    "loads": 831,
+    "tph": 2588.6111111111113,
+    "cost": 208080,
+    "cpt": 2.232857602747076,
+    "sources": [
+      {
+        "id": "ORE",
+        "material": "ore",
+        "loadMean": 4.5,
+        "loadCV": 0.15,
+        "availability": 0.95,
+        "inventory": 5350,
+        "free": 2170.270350576407,
+        "busy": 1908.0711461635256,
+        "wait": 5750.060649824611,
+        "tons": 43960,
+        "loads": 389,
+        "reserved": 370
+      },
+      {
+        "id": "WASTE",
+        "material": "waste",
+        "loadMean": 3.6,
+        "loadCV": 0.15,
+        "availability": 0.95,
+        "inventory": 26680,
+        "free": 2163.882041157528,
+        "busy": 816.1376874385521,
+        "wait": 324.30929431734444,
+        "tons": 22540,
+        "loads": 206,
+        "reserved": 460
+      },
+      {
+        "id": "ORE2",
+        "material": "ore",
+        "loadMean": 4.2,
+        "loadCV": 0.16,
+        "inventory": 60,
+        "availability": 0.96,
+        "free": 1249.629759948232,
+        "busy": 771.4961533944663,
+        "wait": 540.775810288811,
+        "tons": 19940,
+        "loads": 176,
+        "reserved": 0
+      },
+      {
+        "id": "WASTE2",
+        "material": "waste",
+        "loadMean": 4,
+        "loadCV": 0.18,
+        "inventory": 22880,
+        "availability": 0.94,
+        "free": 2162.783700031323,
+        "busy": 270.82452074731054,
+        "wait": 113.5329583185387,
+        "tons": 6750,
+        "loads": 60,
+        "reserved": 270
+      }
+    ],
+    "destinations": [
+      {
+        "id": "CRUSHER",
+        "positions": 1,
+        "dumpMean": 3,
+        "dumpCV": 0.2,
+        "capTPH": 900,
+        "materials": [
+          "ore"
+        ],
+        "slots": [
+          2179.6813191439564
+        ],
+        "rateFree": 2186.2518702648877,
+        "busy": 780.7702652456486,
+        "wait": 9337.117373177727,
+        "tons": 29110,
+        "loads": 259
+      },
+      {
+        "id": "STOCKPILE",
+        "positions": 2,
+        "dumpMean": 2.3,
+        "dumpCV": 0.15,
+        "capTPH": 1800,
+        "materials": [
+          "ore",
+          "waste"
+        ],
+        "slots": [
+          2175.2453121310455,
+          2177.740639914885
+        ],
+        "rateFree": 2178.3527603888233,
+        "busy": 1303.3481513565935,
+        "wait": 15320.881514248373,
+        "tons": 64080,
+        "loads": 572
+      }
+    ],
+    "trucks": [
+      {
+        "id": "90t",
+        "count": 14,
+        "payload": 90,
+        "speedFactor": 1,
+        "availability": 0.95,
+        "costPerHour": 190,
+        "fixedSource": "ORE",
+        "fixedDestination": "CRUSHER",
+        "loads": 463,
+        "tons": 41670,
+        "loadWait": 3227.1788455397746,
+        "dumpWait": 13733.608238172661,
+        "travel": 9693,
+        "service": 3252.454383030204,
+        "delay": 448.2249105626737
+      },
+      {
+        "id": "140t",
+        "count": 12,
+        "payload": 140,
+        "speedFactor": 0.93,
+        "availability": 0.93,
+        "costPerHour": 260,
+        "fixedSource": "WASTE",
+        "fixedDestination": "STOCKPILE",
+        "loads": 368,
+        "tons": 51520,
+        "loadWait": 3501.4998672095344,
+        "dumpWait": 10924.390649253448,
+        "travel": 8266.666666666732,
+        "service": 2636.59034403844,
+        "delay": 667.4306820694808
+      }
+    ],
+    "flows": [
+      {
+        "source": "ORE",
+        "destination": "STOCKPILE",
+        "material": "ore",
+        "tons": 21600,
+        "loads": 190
+      },
+      {
+        "source": "WASTE",
+        "destination": "STOCKPILE",
+        "material": "waste",
+        "tons": 22540,
+        "loads": 206
+      },
+      {
+        "source": "ORE2",
+        "destination": "STOCKPILE",
+        "material": "ore",
+        "tons": 13190,
+        "loads": 116
+      },
+      {
+        "source": "ORE2",
+        "destination": "CRUSHER",
+        "material": "ore",
+        "tons": 6750,
+        "loads": 60
+      },
+      {
+        "source": "WASTE2",
+        "destination": "STOCKPILE",
+        "material": "waste",
+        "tons": 6750,
+        "loads": 60
+      },
+      {
+        "source": "ORE",
+        "destination": "CRUSHER",
+        "material": "ore",
+        "tons": 22360,
+        "loads": 199
+      }
+    ],
+    "count": 26,
+    "hours": 36,
+    "shiftsOut": [
+      30370,
+      30730,
+      32090
+    ],
+    "constraints": [
+      {
+        "source": "ORE",
+        "destination": "CRUSHER",
+        "targetShare": 0.7,
+        "minTPH": 350,
+        "actual": 22360,
+        "minimum": 12600,
+        "shortfall": 0,
+        "excess": 0
+      },
+      {
+        "source": "ORE",
+        "destination": "STOCKPILE",
+        "targetShare": 0.3,
+        "minTPH": 0,
+        "actual": 21600,
+        "minimum": 0,
+        "shortfall": 0,
+        "excess": 0
+      },
+      {
+        "source": "WASTE",
+        "destination": "STOCKPILE",
+        "targetShare": 1,
+        "minTPH": 0,
+        "actual": 22540,
+        "minimum": 0,
+        "shortfall": 0,
+        "excess": 0
+      }
+    ],
+    "loadedTons": 95030,
+    "inTransit": 1840,
+    "reservedTons": 1100,
+    "dead": 0
+  }
+}
