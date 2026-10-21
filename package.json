@@ -1,1 +1,1 @@
-{"name":"mine-haulage-simulator","private":true,"version":"3.0.0-preview","scripts":{"test":"node tests/scenario.cjs","test:browser":"node tests/browser.cjs"},"devDependencies":{"playwright":"1.56.1"}}
+{"name":"mine-haulage-simulator","private":true,"version":"2.1.0-preview.1","scripts":{"test":"node tests/scenario.cjs","test:browser":"node tests/browser.cjs"},"devDependencies":{"playwright":"1.56.1"}}
