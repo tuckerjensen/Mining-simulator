@@ -11,6 +11,6 @@ function loadScenario(c){const next=Scenario.migrate(c);const errors=Scenario.va
 get=function(){const errors=checkEditor();if(errors.length)throw Error(errors.join(' • '));return copy(scenario);};
 preset=function(){try{loadScenario(presets[document.getElementById('preset').value]);run();}catch(e){document.getElementById('error').textContent=e.message;}};
 run=function(){try{const c=get();render(c,simulate(c,c.seed));document.getElementById('error').textContent='Simulation completed.';setStatus('Simulation complete — unvalidated planning model.',false);}catch(e){setStatus(e.message,true);}};
-exportJSON=function(){try{const c=get();const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(c,null,2)],{type:'application/json'}));a.download='haulage-v3-scenario.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}catch(e){setStatus(e.message,true);}};
+exportJSON=function(){try{const c=get();const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(c,null,2)],{type:'application/json'}));a.download='haulage-scenario.schema-v3.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}catch(e){setStatus(e.message,true);}};
 importJSON=async function(e){try{const file=e.target.files[0];if(!file)return;loadScenario(JSON.parse(await file.text()));run();}catch(e){setStatus('Import rejected: '+e.message,true);}finally{e.target.value='';}};
 preset();

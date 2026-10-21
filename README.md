@@ -1,4 +1,4 @@
-# Mine Haulage Simulator — V3 preview
+# Mine Haulage Simulator — 2.1.0-preview.1
 
 Desktop-first structured scenario editor for the existing V2 discrete-event haulage model. This is an **unvalidated planning prototype**, not production-ready software. No merge or deployment is part of this feature branch.
 
@@ -14,9 +14,13 @@ The editor supports loading units, truck types, destinations, independent loaded
 - Closures identify a source, destination, truck type, or ALL_TRUCKS. For ALL_TRUCKS the ID is ignored (enter `*`). Start/end are elapsed minutes from scenario start. Closures delay service starts; they do not suspend work already started.
 - Export creates a validated JSON scenario. Import accepts V2 and V3 JSON, validates before replacing your current work, and runs it. Save exports before closing/reloading; there is no automatic persistence or undo. Results remain from the last run until Simulate is selected.
 
+## Versioning
+
+Application: `2.1.0-preview.1` (compatible editor features added to V2). Engine: `2.0.0-unvalidated` (existing calculation behavior). Scenario schema: `3` (saved-file contract, independent of the application version). Stable source filenames remain unchanged.
+
 ## Shared contract
 
-`scenario.js` is the UI-independent shared V3 contract: field descriptors, migration and validation. `editor.js` consumes those descriptors; a future Mobile Lite interface should consume the same contract and use the same JSON documents rather than introducing a second engine model.
+`scenario.js` is the UI-independent shared schema V3 contract: field descriptors, migration and validation. `editor.js` consumes those descriptors; a future Mobile Lite interface should consume the same contract and use the same JSON documents rather than introducing a second engine model.
 
 V3 adds `schemaVersion: 3` while keeping V2 field names (`sources`, `trucks`, `destinations`, `routes`, `emptyRoutes`, `materialRules`, `windows`, `fleetSweep`). Missing legacy empty routes migrate from `routes[].empty` only when `emptyRoutes` is absent. Explicit empty arrays remain empty. Explicit zero values survive migration. Unsupported versions are rejected. Unknown fields are retained through import/export, including legacy `routes[].empty`; the V2 engine uses only `emptyRoutes` for empty travel. Omitted inventory/maximums remain omitted in exported JSON. No Infinity values are serialized.
 
