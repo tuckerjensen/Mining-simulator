@@ -47,5 +47,5 @@ No field validation/calibration against production records has been performed. P
 
 Validate travel/service distributions, closures, capacities, allocation behavior and outputs against site records before operational decisions.
 
-Every input includes a visible column description and an accessible description linked to its control. Expand each section's Input dictionary for required/optional status and numeric bounds. Explanations live in the shared input-help.js module, including units, blank behavior, fractions versus percentages, independent loaded/empty links, soft material priorities, and simplified availability/closure/capacity behavior.
+Every input includes a small question-mark help icon. Hover, focus with the keyboard, or tap it to read the explanation; Escape dismisses focused help. Each control is linked to its tooltip for assistive technology. Expand each section's Input dictionary for required/optional status and numeric bounds. Explanations live in the shared input-help.js module, including units, blank behavior, fractions versus percentages, independent loaded/empty links, soft material priorities, and simplified availability/closure/capacity behavior.
 
